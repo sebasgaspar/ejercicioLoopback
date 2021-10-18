@@ -3,6 +3,18 @@
 This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
 [initial project layout](https://loopback.io/doc/en/lb4/Loopback-application-layout.html).
 
+## Start
+
+```sh
+npm start
+```
+
+## Explorer documentation
+
+```sh
+localhost:3000/explorer
+```
+
 ## Middleware
 Middleware path:
 ```sh
@@ -11,6 +23,15 @@ Middleware path:
 
 ## Schema
 ### Usuario
+```sh
+CREATE TABLE `usuario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `last_name` VARCHAR(100) NOT NULL,
+  `identification` VARCHAR(100) NOT NULL,
+  `age` INT NOT NULL,
+  PRIMARY KEY (`id`));
+```
 
 ## Other useful commands
 
