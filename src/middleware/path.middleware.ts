@@ -6,7 +6,17 @@ export const log: Middleware = async (middlewareCtx: MiddlewareContext, next: Ne
   console.log('PATH Request: %s', request.path);
   try {
     const result = await next();
-
+    const {response} = middlewareCtx;
+    let date: Date = new Date(0), updated: boolean = false;
+    if (request.method == 'PUT') {
+      updated = true
+      date = new Date()
+    }
+    response.send({
+      'data': result,
+      'updated': updated,
+      'update_at': date
+    });
     return result;
   } catch (err) {
     // Catch errors from downstream middleware
